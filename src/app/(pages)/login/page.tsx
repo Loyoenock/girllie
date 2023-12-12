@@ -29,6 +29,20 @@ export default async function Login() {
           />
         </Link>
       </div>
+
+      <div className={classes.wrapForm}>
+        <div className={classes.formBlock}>
+          <RenderParams className={classes.params} />
+
+          <div className={classes.formTitle}>
+            <h3>Welcome</h3>
+            <Image src="/assets/icons/greetings.svg" alt="logo" width={30} height={30} />
+          </div>
+          <p> Login to your account </p>
+
+          <LoginForm />
+        </div>
+      </div>
     </section>
   )
 }
