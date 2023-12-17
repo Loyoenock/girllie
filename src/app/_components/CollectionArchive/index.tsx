@@ -2,6 +2,7 @@
 
 import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import qs from 'qs'
+import { useFilter } from 'src/app/_providers/Filter'
 
 import { Product } from '../../../payload/payload-types'
 import type { ArchiveBlockProps } from '../../_blocks/ArchiveBlock/types'
@@ -37,12 +38,12 @@ export type Props = {
 }
 
 export const CollectionArchive: React.FC<Props> = props => {
+  const { categoryFilters, sort } = useFilter()
   const {
     className,
     relationTo,
     showPageRange,
     onResultChange,
-    sort = '-createdAt',
     limit = 10,
     populatedDocs,
     populatedDocsTotal,
@@ -95,13 +96,13 @@ export const CollectionArchive: React.FC<Props> = props => {
       {
         sort,
         where: {
-          ...(catsFromProps && catsFromProps?.length > 0
+          ...(categoryFilters && categoryFilters?.length > 0
             ? {
                 categories: {
                   in:
-                    typeof catsFromProps === 'string'
-                      ? [catsFromProps]
-                      : catsFromProps.map(cat => cat.id).join(','),
+                    typeof categoryFilters === 'string'
+                      ? [categoryFilters]
+                      : categoryFilters.map((cat: string) => cat).join(','),
                 },
               }
             : {}),
@@ -143,7 +144,7 @@ export const CollectionArchive: React.FC<Props> = props => {
     return () => {
       if (timer) clearTimeout(timer)
     }
-  }, [page, catsFromProps, relationTo, onResultChange, sort, limit])
+  }, [page, categoryFilters, relationTo, onResultChange, sort, limit])
 
   return (
     <div className={[classes.collectionArchive, className].filter(Boolean).join(' ')}>
