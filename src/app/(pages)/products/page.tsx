@@ -4,12 +4,12 @@ import { fetchDoc } from 'src/app/_api/fetchDoc'
 import { fetchDocs } from 'src/app/_api/fetchDocs'
 import { Blocks } from 'src/app/_components/Blocks'
 import { Gutter } from 'src/app/_components/Gutter'
+import { HR } from 'src/app/_components/HR'
 import { Category, Page } from 'src/payload/payload-types'
 
 import Filters from './Filters'
 
 import classes from './index.module.scss'
-import { HR } from 'src/app/_components/HR'
 
 const Products = async () => {
   const { isEnabled: isDraftMode } = draftMode()
@@ -31,7 +31,7 @@ const Products = async () => {
   return (
     <div className={classes.container}>
       <Gutter className={classes.products}>
-        <Filters />
+        <Filters categories={categories}/>
         <Blocks blocks={page.layout} disableTopPadding />
       </Gutter>
       <HR />
