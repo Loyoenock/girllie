@@ -12,7 +12,7 @@ const Promotion = () => {
   })
 
   const targetDate = new Date()
-  targetDate.setDate(targetDate.getDate() + 10)
+  targetDate.setDate(targetDate.getDate() + 13)
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
@@ -40,13 +40,14 @@ const Promotion = () => {
   return (
     <section className={classes.promotion}>
       <div className={classes.textBox}>
-        <h3 className={classes.title}> Seasonal Offer </h3>
+        <h3 className={classes.title}>Seasonal Deals</h3>
         <p>
           With our Seasonal Offers, you're not just buying fashion; you're immersing yourself in an
           experience. Each piece tells a story, reflecting the unique charm of the season it belongs
           to. From chic dresses to stylish accessories, Girllie Store is your go-to destination for
           fashion that resonates with the rhythm of the changing seasons.
         </p>
+
         <ul className={classes.stats}>
           <StatBox label="Days" value={time.days} />
           <StatBox label="Hours" value={time.hours} />
@@ -57,6 +58,7 @@ const Promotion = () => {
     </section>
   )
 }
+
 const StatBox = ({ label, value }: { label: string; value: number }) => (
   <li className={classes.statBox}>
     <h4>{value}</h4>

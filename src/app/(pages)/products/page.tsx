@@ -1,12 +1,12 @@
 import React from 'react'
 import { draftMode } from 'next/headers'
-import { fetchDoc } from 'src/app/_api/fetchDoc'
-import { fetchDocs } from 'src/app/_api/fetchDocs'
-import { Blocks } from 'src/app/_components/Blocks'
-import { Gutter } from 'src/app/_components/Gutter'
-import { HR } from 'src/app/_components/HR'
-import { Category, Page } from 'src/payload/payload-types'
 
+import { Category, Page } from '../../../payload/payload-types'
+import { fetchDoc } from '../../_api/fetchDoc'
+import { fetchDocs } from '../../_api/fetchDocs'
+import { Blocks } from '../../_components/Blocks'
+import { Gutter } from '../../_components/Gutter'
+import { HR } from '../../_components/HR'
 import Filters from './Filters'
 
 import classes from './index.module.scss'
@@ -23,6 +23,7 @@ const Products = async () => {
       slug: 'products',
       draft: isDraftMode,
     })
+
     categories = await fetchDocs<Category>('categories')
   } catch (error) {
     console.log(error)
@@ -31,8 +32,8 @@ const Products = async () => {
   return (
     <div className={classes.container}>
       <Gutter className={classes.products}>
-        <Filters categories={categories}/>
-        <Blocks blocks={page.layout} disableTopPadding />
+        <Filters categories={categories} />
+        <Blocks blocks={page?.layout} disableTopPadding={true} />
       </Gutter>
       <HR />
     </div>
