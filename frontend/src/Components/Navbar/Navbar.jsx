@@ -15,8 +15,8 @@ const Navbar = () => {
         <li onClick={() => {setMenu("shop")}}> <Link to="/" style={{textDecoration: "none"}}> Shop </Link> {menu === "shop" ? <hr /> : <></>}</li>
         <li onClick={() => {setMenu("ladies")}}> <Link to="/ladies" style={{textDecoration: "none"}}> Ladies </Link> {menu === "ladies" ? <hr /> : <></>}</li>
         <li onClick={() => {setMenu("kids apperal")}}><Link to="/kids apperal" style={{textDecoration: "none"}}>Kids Apperal</Link> {menu === "kids apperal" ? <hr /> : <></>}</li>
-        <li onClick={() => {setMenu("scents & decor")}}><Link to="/scents & decor">Scents & Decor</Link>{menu === "scents & decor" ? <hr /> : <></>}</li>
-        <li onClick={() => {setMenu("accessoories")}}><Link to="/accessoories">Accessories </Link> {menu === "accessoories" ? <hr /> : <></>}</li>   
+        <li onClick={() => {setMenu("scents & decor")}}><Link to="/scents & decor" style={{textDecoration: "none"}}>Scents & Decor</Link>{menu === "scents & decor" ? <hr /> : <></>}</li>
+        <li onClick={() => {setMenu("accessoories")}}><Link to="/accessoories" style={{textDecoration: "none"}}>Accessories </Link> {menu === "accessoories" ? <hr /> : <></>}</li>   
       </ul>
       <div className='nav-login-cart'>
         <Link to="/login"><button>Login</button></Link>
