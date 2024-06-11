@@ -25,7 +25,8 @@
     align-items: center;
     justify-content: center;
     gap: 3px;
-    cursor: pointer;                   
+    cursor: pointer;
+    textd-decoration: none;                                    
 }
 .nav-links hr {
     border: none;
