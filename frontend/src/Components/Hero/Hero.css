@@ -19,7 +19,7 @@
 }
 .hero-left p { 
     color: #171717;
-    font-size: 70px;
+    font-size: 65px;
     font-weight: 600;
 }
 .hero_hand-icon{
@@ -49,4 +49,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.hero-right img {
+    height: 600px;
+
 }
