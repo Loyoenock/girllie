@@ -1,15 +1,23 @@
 .footer-section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;   
     gap: 50px;
 }
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 0 50px;
+}
+
 .footer-logo {
     display: flex;
     align-items: center;
-    gap: 20px;
 }
+
 .footer-nav {
     display: flex;
     list-style: none;
@@ -17,19 +25,23 @@
     color: #252525;
     font-size: 1.2rem;
 }
+
 .footer-nav li {
     cursor: pointer;
 }
+
 .footer-social {
     display: flex;
     gap: 20px;
 }
+
 .social-icon-container {
     padding: 10px;
     padding-bottom: 6px;
     background: #fbfbfb;
     border: 1px solid #ebebeb;
 }
+
 .footer-copyright {
     display: flex;
     flex-direction: column;
@@ -40,6 +52,7 @@
     color: #a1a1a1;
     font-size: 1.2rem;
 }
+
 .footer-copyright hr {
     width: 80%;
     border: none;
